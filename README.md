@@ -2,7 +2,7 @@
 
 A modern, Apple-inspired cryptocurrency tracking application built with Next.js and Tailwind CSS. Track real-time cryptocurrency prices, market trends, and more with a beautiful, minimalist interface.
 
-![Crypto Tracker Screenshot](public/screenshot.png)
+![Crypto Tracker Screenshot](https://raw.githubusercontent.com/lblaseygg/Crypto-tracker/main/public/screenshot.png)
 
 ## Features
 
