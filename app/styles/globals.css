@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 29, 29, 31;
+  --background-start-rgb: 245, 245, 247;
+  --background-end-rgb: 255, 255, 255;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --card-scale: scale(1.02);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl p-6 transition-all duration-300 ease-out;
+    box-shadow: var(--card-shadow);
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .card:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: var(--card-scale);
+  }
+  
+  .btn {
+    @apply px-5 py-2.5 rounded-full font-medium transition-all duration-300 ease-out;
+  }
+  
+  .btn-primary {
+    @apply bg-apple-blue text-white hover:bg-blue-600 active:bg-blue-700;
+  }
+
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-lg;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-apple-blue to-blue-600;
+  }
+
+  .search-input {
+    @apply block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-full bg-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-apple-blue focus:border-transparent transition-all duration-300 ease-out;
+  }
+
+  .search-input:focus {
+    @apply shadow-lg;
+    transform: translateY(-1px);
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .price-change-positive {
+    @apply text-green-600;
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .price-change-negative {
+    @apply text-red-600;
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .chart-container {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .chart-container:hover {
+    transform: scale(1.05);
+  }
+}
